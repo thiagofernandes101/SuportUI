@@ -1,0 +1,28 @@
+C:\Users\082170029\Desktop\Curso Web\SuportAPI\SuportAPI\bin\Debug\netcoreapp2.1\SuportAPI.deps.json
+C:\Users\082170029\Desktop\Curso Web\SuportAPI\SuportAPI\bin\Debug\netcoreapp2.1\SuportAPI.runtimeconfig.json
+C:\Users\082170029\Desktop\Curso Web\SuportAPI\SuportAPI\bin\Debug\netcoreapp2.1\SuportAPI.runtimeconfig.dev.json
+C:\Users\082170029\Desktop\Curso Web\SuportAPI\SuportAPI\bin\Debug\netcoreapp2.1\SuportAPI.dll
+C:\Users\082170029\Desktop\Curso Web\SuportAPI\SuportAPI\bin\Debug\netcoreapp2.1\SuportAPI.pdb
+C:\Users\082170029\Desktop\Curso Web\SuportAPI\SuportAPI\obj\Debug\netcoreapp2.1\SuportAPI.csprojAssemblyReference.cache
+C:\Users\082170029\Desktop\Curso Web\SuportAPI\SuportAPI\obj\Debug\netcoreapp2.1\SuportAPI.csproj.CoreCompileInputs.cache
+C:\Users\082170029\Desktop\Curso Web\SuportAPI\SuportAPI\obj\Debug\netcoreapp2.1\SuportAPI.RazorAssemblyInfo.cache
+C:\Users\082170029\Desktop\Curso Web\SuportAPI\SuportAPI\obj\Debug\netcoreapp2.1\SuportAPI.RazorAssemblyInfo.cs
+C:\Users\082170029\Desktop\Curso Web\SuportAPI\SuportAPI\obj\Debug\netcoreapp2.1\SuportAPI.AssemblyInfoInputs.cache
+C:\Users\082170029\Desktop\Curso Web\SuportAPI\SuportAPI\obj\Debug\netcoreapp2.1\SuportAPI.AssemblyInfo.cs
+C:\Users\082170029\Desktop\Curso Web\SuportAPI\SuportAPI\obj\Debug\netcoreapp2.1\SuportAPI.RazorTargetAssemblyInfo.cache
+C:\Users\082170029\Desktop\Curso Web\SuportAPI\SuportAPI\obj\Debug\netcoreapp2.1\SuportAPI.dll
+C:\Users\082170029\Desktop\Curso Web\SuportAPI\SuportAPI\obj\Debug\netcoreapp2.1\SuportAPI.pdb
+C:\Users\082170029\Desktop\SuportAPI\SuportAPI\bin\Debug\netcoreapp2.1\SuportAPI.deps.json
+C:\Users\082170029\Desktop\SuportAPI\SuportAPI\bin\Debug\netcoreapp2.1\SuportAPI.runtimeconfig.json
+C:\Users\082170029\Desktop\SuportAPI\SuportAPI\bin\Debug\netcoreapp2.1\SuportAPI.runtimeconfig.dev.json
+C:\Users\082170029\Desktop\SuportAPI\SuportAPI\bin\Debug\netcoreapp2.1\SuportAPI.dll
+C:\Users\082170029\Desktop\SuportAPI\SuportAPI\bin\Debug\netcoreapp2.1\SuportAPI.pdb
+C:\Users\082170029\Desktop\SuportAPI\SuportAPI\obj\Debug\netcoreapp2.1\SuportAPI.csprojAssemblyReference.cache
+C:\Users\082170029\Desktop\SuportAPI\SuportAPI\obj\Debug\netcoreapp2.1\SuportAPI.csproj.CoreCompileInputs.cache
+C:\Users\082170029\Desktop\SuportAPI\SuportAPI\obj\Debug\netcoreapp2.1\SuportAPI.RazorAssemblyInfo.cache
+C:\Users\082170029\Desktop\SuportAPI\SuportAPI\obj\Debug\netcoreapp2.1\SuportAPI.RazorAssemblyInfo.cs
+C:\Users\082170029\Desktop\SuportAPI\SuportAPI\obj\Debug\netcoreapp2.1\SuportAPI.AssemblyInfoInputs.cache
+C:\Users\082170029\Desktop\SuportAPI\SuportAPI\obj\Debug\netcoreapp2.1\SuportAPI.AssemblyInfo.cs
+C:\Users\082170029\Desktop\SuportAPI\SuportAPI\obj\Debug\netcoreapp2.1\SuportAPI.RazorTargetAssemblyInfo.cache
+C:\Users\082170029\Desktop\SuportAPI\SuportAPI\obj\Debug\netcoreapp2.1\SuportAPI.dll
+C:\Users\082170029\Desktop\SuportAPI\SuportAPI\obj\Debug\netcoreapp2.1\SuportAPI.pdb

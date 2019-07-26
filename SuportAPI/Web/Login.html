@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./libs/bootstrap-4.3.1/bootstrapcss.min.css">
+    <script type="text/javascript" src="./libs/JQuery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="./libs/JQuery/popper.min.js"></script>
+    <script type="text/javascript" src="./libs/bootstrap-4.3.1/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin my-5 shadow p-3 mb-5 bg-white rounded">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">SuportAPI</h5>
+                        <div class="form-signin">
+                            <div class="form-label-group">
+                                <label>Login</label>
+                                <input id="inputLogin" type="text" class="form-control" placeholder="Login" autofocus>
+                            </div>
+                            <div class="form-label-group">
+                                <label>Senha</label>
+                                <input id="inputSenha" type="password" class="form-control" placeholder="Senha">
+                            </div>
+                            <hr class="my-5">
+                            <button id="Login" class="btn btn-lg btn-primary btn-block">Login</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        $("#Login").click(function(){
+            var user = document.getElementById("inputLogin").value;
+            var password = document.getElementById("inputSenha").value;
+
+            if (user == undefined || user == ""){
+                alert("Usuário não informado");
+            }
+            else if (password == undefined || password == ""){
+                alert("Password não informado");
+            }
+            else{
+                $.ajax({
+                    method: "GET",
+                    url: "http://localhost:50451/api/user/validate/" + user + "/" + password,
+                    accepts: "application/json"
+                }).done(function(data){
+                    if (data != null){
+                        window.location.href = "./Main.html" + "?" + data.login;
+                    }
+                    else{
+                        alert("Usuáio não encontrado");
+                    }
+                }).fail(function(error){
+                    alert(error);
+                });
+            }
+        });
+    });
+</script>
+
+</html>

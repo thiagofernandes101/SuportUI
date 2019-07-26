@@ -1,0 +1,161 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./libs/bootstrap-4.3.1/bootstrapcss.min.css">
+    <script type="text/javascript" src="./libs/JQuery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="./libs/JQuery/popper.min.js"></script>
+    <script type="text/javascript" src="./libs/bootstrap-4.3.1/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container shadow p-3 mb-5 rounded bg-white" style="min-height: 100%">
+        <div class="row">
+            <div class="col">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <!-- navbar é uma barra de navegação-->
+                    <a class="navbar-brand" href="#">SupportAPI</a>
+                    <button class="navbar-toggler" type="button" data-target="#navbarNav" data-toggle="collapse" aria-controls="navbarNav" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <div class="navbar-nav">
+                            <a class="nav-item nav-link" id="Main" href="javascript:void(0)">Main</a>
+                            <a class="nav-item nav-link active" id="Search" href="javascript:void(0)">Consultar Tickets</a>
+                            <a class="nav-item nav-link" id="Create" href="javascript:void(0)">Criar Ticket</a>
+                        </div>
+                    </div>
+                    <div class="navbar-nav ml-auto">
+                        <a class="nav-item nav-link" id="user"></a>
+                        <a class="nav-item nav-link" href="./Login.html">Logout</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">Main</li>
+                        <li class="breadcrumb-item active" aria-current="page">Search</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="input-group mb-3">
+                    <input id="inputSearch" type="text" class="form-control" placeholder="Search">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="search">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="Table">
+            <div class="col">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-4">
+                                <span>Título</span>
+                            </div>
+                            <div class="col-2">
+                                <span>Tipo</span>
+                            </div>
+                            <div class="col-2">
+                                <span>Prioridade</span>
+                            </div>
+                            <div class="col-2">
+                                <span>Data de Criação</span>
+                            </div>
+                            <div class="col-2">
+                                <span>Status</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item" id="Tickets">
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    //var user = window.location.search.substr(1).split("?");
+    var user = "Maria";
+    $("#user").append(user);
+
+    $("#Main").click(function () {
+        window.location.href = "./Main.html?" + user;
+    });
+    $("#Search").click(function () {
+        window.location.href = "./Search.html?" + user;
+    });
+    $("#Create").click(function () {
+        window.location.href = "./Create.html?" + user;
+    });
+
+    $("#Table").hide();
+
+    var listarTickets = function(tickets){
+        $("#Table").show();
+
+        tickets.forEach(ticket=>{
+            $("#Tickets").append("<div class='row'>" +
+                    "<div class='col-4'><span><a href='javascript:void(0)' onclick='details(" + ticket.id + ")'>" + ticket.code + "</a></span></div>" +
+                    "<div class='col-2'><span>" + ticket.type + "</span></div>" +
+                    "<div class='col-2'><span>" + ticket.priority + "</span></div>" +
+                    "<div class='col-2'><span>" + ticket.openDate + "</span></div>" +
+                    "<div class='col-2'><span>" + ticket.status + "</span></div>" +
+                "</div>");
+        });
+    };
+
+    var details = function(id){
+        window.location.href = "./Details.html?" + user + "?" + id;
+    };
+
+    $("#search").click(function(){
+        var id = document.getElementById("inputSearch").value;
+
+        if (id == undefined || id == ""){
+            $.ajax({
+                method: "GET",
+                url: "http://localhost:50451/api/ticket/getTickets",
+                accepts: "aplication/json",
+            }).done(function(tickets){
+                if (tickets != null || tickets != undefined){
+                    listarTickets(tickets);
+                }
+                else{
+                    alert("Nenhum ticket encontrado");
+                }
+            }).fail(function(){
+                alert("Nenhum ticket encontrado");
+            })
+        }
+        else{
+            $.ajax({
+                method: "GET",
+                url: "http://localhost:50451/api/ticket/getTicket/" + id,
+                accepts: "aplication/json",
+            }).done(function(ticket){
+                if (ticket != null || ticket != undefined){
+                    var tickets = [];
+                    tickets.push(ticket);
+                    listarTickets(tickets);
+                }
+                else{
+                    alert("Nenhum ticket encontrado");
+                }
+            }).fail(function(){
+                alert("Nenhum ticket encontrado");
+            })
+        }
+    });
+</script>
+
+</html>
